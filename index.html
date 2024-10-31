@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Land Lease Proposal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --background-color: #f5f7fa;
+            --text-color: #333;
+            --card-background: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --spacing-unit: 1rem;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--background-color) 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 4) var(--spacing-unit);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 15px;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .section {
+            background: var(--card-background);
+            padding: calc(var(--spacing-unit) * 2);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+            font-size: clamp(1rem, 3vw, 1.4rem);
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-unit);
+            margin: var(--spacing-unit) 0;
+        }
+
+        .phase-card {
+            background: var(--background-color);
+            padding: calc(var(--spacing-unit) * 1.5);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .rent-timeline {
+            position: relative;
+            padding-left: calc(var(--spacing-unit) * 2);
+        }
+
+        .rent-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .rent-phase {
+            position: relative;
+            margin-bottom: var(--spacing-unit);
+            padding-left: var(--spacing-unit);
+        }
+
+        .rent-phase::before {
+            content: '';
+            position: absolute;
+            left: calc(var(--spacing-unit) * -2);
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .eco-initiatives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-unit);
+            margin: var(--spacing-unit) 0;
+        }
+
+        .eco-card {
+            background: #e8f4ea;
+            padding: var(--spacing-unit);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .list-styled {
+            list-style-position: inside;
+            padding-left: var(--spacing-unit);
+        }
+
+        .list-styled li {
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+            position: relative;
+        }
+
+        .highlight-box {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: var(--spacing-unit);
+            margin: var(--spacing-unit) 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --spacing-unit: 0.8rem;
+            }
+
+            .container {
+                padding: var(--spacing-unit);
+            }
+
+            .section {
+                padding: var(--spacing-unit);
+            }
+
+            .phase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rent-timeline {
+                padding-left: calc(var(--spacing-unit) * 1.5);
+            }
+
+            .list-styled {
+                padding-left: calc(var(--spacing-unit) * 0.5);
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing-unit: 0.6rem;
+            }
+
+            header {
+                padding: calc(var(--spacing-unit) * 2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header data-aos="fade-down">
+            <h1>Tourism Land Lease Proposal</h1>
+            <p>Presented to: N.Magoodhoo Island Council</p>
+            <p>Date: 1 November 2024</p>
+        </header>
+
+        <section class="section" data-aos="fade-up">
+            <h2>1. Lease Terms and Area Specifications</h2>
+            <div class="highlight-box">
+                <p><strong>Total Land Area:</strong> 100,000 sqft (excluding beach area for tourist use)</p>
+            </div>
+            
+            <h3>Phased Rent Structure</h3>
+            <div class="rent-timeline">
+                <div class="rent-phase" data-aos="fade-left">
+                    <strong>Initial Period (12 months)</strong>
+                    <p>Rent-free period for land allocation and survey work</p>
+                </div>
+                <div class="rent-phase" data-aos="fade-left" data-aos-delay="100">
+                    <strong>Years 1-3: 5 laari/sqft</strong>
+                    <p>Physical work must commence during this period, including initial structural or landscaping activities as outlined.</p>
+                </div>
+                <div class="rent-phase" data-aos="fade-left" data-aos-delay="200">
+                    <strong>Years 4-6: 10 laari/sqft</strong>
+                    <p>Structual and finishing works with beach development</p>
+                </div>
+                <div class="rent-phase" data-aos="fade-left" data-aos-delay="300">
+                    <strong>Years 7-12: 15 laari/sqft</strong>
+                    <p>Operational phase with Marketing and CSR initiatives</p>
+                </div>
+                <div class="rent-phase" data-aos="fade-left" data-aos-delay="400">
+                    <strong>Years 12-30: 48 laari/sqft</strong>
+                    <p>Continued operational terms</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>2. Construction and Development Plan</h2>
+            <div class="phase-grid">
+                <div class="phase-card" data-aos="zoom-in">
+                    <h3>Structural Phase</h3>
+                    <ul class="list-styled">
+                        <li>Tourist villas</li>
+                        <li>Foundational amenities</li>
+                        <li>Essential services infrastructure</li>
+                    </ul>
+                </div>
+                <div class="phase-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Finishing Phase</h3>
+                    <ul class="list-styled">
+                        <li>Interior finishing</li>
+                        <li>Landscaping</li>
+                        <li>Beach expansion with white sand</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box" data-aos="fade-up">
+                <h3>Additional Facilities</h3>
+                <ul class="list-styled">
+                    <li>Restaurant</li>
+                    <li>Gym</li>
+                    <li>Park</li>
+                    <li>Public amenities (subject to land allocation)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>3. Sustainable and Eco-Friendly Initiatives</h2>
+            <div class="eco-initiatives">
+                <div class="eco-card" data-aos="flip-left">
+                    <h3>Energy Solutions</h3>
+                    <p>Solar power installation for reduced environmental impact</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>4. Beach and Landscape Development</h2>
+            <div class="highlight-box">
+                <h3>Beach Expansion Plan</h3>
+                <p>Creation of extended white sand beach using sustainable methods</p>
+                <p>Comprehensive landscaping for enhanced tourist appeal</p>
+            </div>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>5. Rights to Plot Sales</h2>
+            <div class="highlight-box">
+                <h3>Third-Party Leasing Rights</h3>
+                <p>Permission granted for individual plot leasing to third parties throughout lease term</p>
+                <p>Enables shared management and diverse service offerings</p>
+            </div>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>6. Corporate Social Responsibility (CSR) Commitments</h2>
+            <ul class="list-styled">
+                <li data-aos="fade-left">Free legal and council planning advice</li>
+                <li data-aos="fade-left" data-aos-delay="100">Financial consulting for future planning</li>
+                <li data-aos="fade-left" data-aos-delay="200">Harbor area development support</li>
+                <li data-aos="fade-left" data-aos-delay="300">Events sponsorship</li>
+            </ul>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>7. Termination and Reimbursement Clause</h2>
+            <div class="phase-grid">
+                <div class="phase-card" data-aos="zoom-in">
+                    <h3>Lessee Cancellation</h3>
+                    <p>Right to cancel at any time without reimbursement obligation</p>
+                </div>
+                <div class="phase-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Council Cancellation</h3>
+                    <p>Independent valuer assessment required for fair reimbursement</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-aos="fade-up">
+            <h2>8. Council Information and Support</h2>
+            <div class="highlight-box">
+                <h3>Information Requirements</h3>
+                <ul class="list-styled">
+                    <li>Available council services and support</li>
+                    <li>Notable island areas and attractions</li>
+                    <li>Development alignment opportunities</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 50,
+            disable: window.innerWidth < 768
+        });
+    </script>
+</body>
+</html>
